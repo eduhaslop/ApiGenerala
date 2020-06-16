@@ -7,27 +7,27 @@ router.get('/uno/:id', async (req, res)=>{
     res.send(puntos);
 });
 
-router.get('/dos/:id', async (req, res)=>{
+router.put('/dos/:id', async (req, res)=>{
     let puntos = await dataMenores.updatePuntosDos(req.params.id);
     res.send(puntos);
 });
 
-router.get('/tres/:id', async (req, res)=>{
+router.put('/tres/:id', async (req, res)=>{
     let puntos = await dataMenores.updatePuntosTres(req.params.id);
     res.send(puntos);
 });
 
-router.get('/cuatro/:id', async (req, res)=>{
+router.put('/cuatro/:id', async (req, res)=>{
     let puntos = await dataMenores.updatePuntosCuatro(req.params.id);
     res.send(puntos);
 });
 
-router.get('/cinco/:id', async (req, res)=>{
+router.put('/cinco/:id', async (req, res)=>{
     let puntos = await dataMenores.updatePuntosCinco(req.params.id);
     res.send(puntos);
 });
 
-router.get('/seis/:id', async (req, res)=>{
+router.put('/seis/:id', async (req, res)=>{
     let puntos = await dataMenores.updatePuntosSeis(req.params.id);
     res.send(puntos);
 });

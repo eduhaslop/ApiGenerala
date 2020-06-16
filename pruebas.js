@@ -56,13 +56,4 @@ function ordenarValores(partida){
     return arrayValores;
 }
 
-
-
 console.log(ordenarValores(partida));
-console.log(calcularPoker(partida));
-
-
-
-
-
-
