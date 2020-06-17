@@ -36,17 +36,9 @@ async function updatePartida(partida){
                                 usuario : partida.usuario,
                                 nivel : partida.nivel,
                                 tirada : partida.tirada,
-                                generaladoble : partida.generaladoble,
-                                generala : partida.generala,
-                                poker : partida.poker,
-                                full : partida.full,
-                                escalera : partida.escalera,
-                                seis : partida.seis,
-                                cinco : partida.cinco,
-                                cuatro : partida.cuatro,
-                                tres : partida.tres,
-                                dos : partida.dos,
-                                uno : partida.uno
+                                juegos : partida.juegos,
+                                victoria : partida.victoria,
+                                puntaje : partida.puntaje
                             }
     };
 

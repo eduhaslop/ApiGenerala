@@ -39,6 +39,7 @@ async function updateUsuario(usuario){
             victorias: usuario.victorias,
             derrotas: usuario.derrotas,
             score: usuario.score,
+            record: usuario.record,
             promedio: usuario.promedio
         }
     };

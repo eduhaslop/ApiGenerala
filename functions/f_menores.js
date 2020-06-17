@@ -10,7 +10,7 @@ function calcularMenores(dado, partida){
 }
 
 async function calcularUno(partida){
-    let puntos = 0;
+    let puntos;
     puntos = calcularMenores(1, partida);
     return puntos;
 }; 

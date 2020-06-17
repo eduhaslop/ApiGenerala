@@ -2,7 +2,7 @@ const express = require('express');
 const dataMenores = require('../data/menor');
 const router = express.Router();
 
-router.get('/uno/:id', async (req, res)=>{
+router.put('/uno/:id', async (req, res)=>{
     let puntos = await dataMenores.updatePuntosUno(req.params.id);
     res.send(puntos);
 });

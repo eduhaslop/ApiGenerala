@@ -20,17 +20,21 @@ router.post('/facil', async (req, res)=>{
                   },
                   intentos: 5
             },
-            generaladoble : undefined,
-            generala : undefined,
-            poker : undefined,
-            full : undefined,
-            escalera : undefined,
-            seis : undefined,
-            cinco : undefined,
-            cuatro : undefined,
-            tres : undefined,
-            dos : undefined,
-            uno : undefined
+            juegos : {
+                generaladoble : undefined,
+                generala : undefined,
+                poker : undefined,
+                full : undefined,
+                escalera : undefined,
+                seis : undefined,
+                cinco : undefined,
+                cuatro : undefined,
+                tres : undefined,
+                dos : undefined,
+                uno : undefined
+            },
+            victoria : undefined,
+            puntaje : undefined
         }
     );
 
@@ -55,17 +59,21 @@ router.post('/medio', async (req, res)=>{
                   },
                 intentos: 3
             },
-            generaladoble : undefined,
-            generala : undefined,
-            poker : undefined,
-            full : undefined,
-            escalera : undefined,
-            seis : undefined,
-            cinco : undefined,
-            cuatro : undefined,
-            tres : undefined,
-            dos : undefined,
-            uno : undefined
+            juegos : {
+                generaladoble : undefined,
+                generala : undefined,
+                poker : undefined,
+                full : undefined,
+                escalera : undefined,
+                seis : undefined,
+                cinco : undefined,
+                cuatro : undefined,
+                tres : undefined,
+                dos : undefined,
+                uno : undefined
+            },
+            victoria : undefined,
+            puntaje : undefined
         }
     );
 
@@ -90,17 +98,21 @@ router.post('/dificil', async (req, res)=>{
                   },
                 intentos: 1
             },
-            generaladoble : undefined,
-            generala : undefined,
-            poker : undefined,
-            full : undefined,
-            escalera : undefined,
-            seis : undefined,
-            cinco : undefined,
-            cuatro : undefined,
-            tres : undefined,
-            dos : undefined,
-            uno : undefined
+            juegos : {
+                generaladoble : undefined,
+                generala : undefined,
+                poker : undefined,
+                full : undefined,
+                escalera : undefined,
+                seis : undefined,
+                cinco : undefined,
+                cuatro : undefined,
+                tres : undefined,
+                dos : undefined,
+                uno : undefined
+            },
+            victoria : undefined,
+            puntaje : undefined
         }
     );
 

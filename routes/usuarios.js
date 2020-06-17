@@ -21,10 +21,11 @@ router.post('/', async (req, res)=>{
             nombre: req.body.nombre,
             mail: req.body.mail,
             pass: req.body.pass,
-            victorias: req.body.victorias,
-            derrotas: req.body.derrotas,
-            score: req.body.score,
-            promedio: req.body.promedio
+            victorias: 0,
+            derrotas: 0,
+            score: 0,
+            record: 0,
+            promedio: 0
         }
     );
 
@@ -41,6 +42,7 @@ router.put('/:id', async (req, res)=>{
             victorias: req.body.victorias,
             derrotas: req.body.derrotas,
             score: req.body.score,
+            record: req.body.record,
             promedio: req.body.promedio
         }
     );

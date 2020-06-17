@@ -1,47 +1,34 @@
 let partida = {
-  _id: 2,
-  usuario: 1,
-  nivel: {
-    level: 1,
-    tiros: 5,
-    meta: 100
+  _id: 1,
+  usuario : 1,
+  nivel : {level: 1,
+           tiros: 5,
+           meta: 1000},
+  tirada : {
+      dados: {
+          d1 : {valor : null, guardado : false},
+          d2 : {valor : null, guardado : false},
+          d3 : {valor : null, guardado : false},
+          d4 : {valor : null, guardado : false},
+          d5 : {valor : null, guardado : false}
+        },
+        intentos: 5
   },
-  tirada: {
-    dados: {
-      d1: {
-        valor: 5,
-        guardado: false
-      },
-      d2: {
-        valor: 5,
-        guardado: true
-      },
-      d3: {
-        valor: 5,
-        guardado: true
-      },
-      d4: {
-        valor: 1,
-        guardado: true
-      },
-      d5: {
-        valor: 5,
-        guardado: false
-      }
-    },
-    intentos: 5
+  juegos : {
+      generaladoble : 60,
+      generala : 50,
+      poker : 45,
+      full : 0,
+      escalera : 25,
+      seis : 24,
+      cinco : 20,
+      cuatro : 16,
+      tres : 3,
+      dos : 6,
+      uno : 1
   },
-  generaladoble: 0,
-  generala: 50,
-  poker: null,
-  full: null,
-  escalera: null,
-  seis: null,
-  cinco: null,
-  cuatro: null,
-  tres: null,
-  dos: null,
-  uno: null
+  victoria : undefined,
+  puntaje : undefined
 }
 
 function ordenarValores(partida){
@@ -56,4 +43,20 @@ function ordenarValores(partida){
     return arrayValores;
 }
 
-console.log(ordenarValores(partida));
+function obtenerResultado(partida){
+  let resultado = {};
+  let puntaje = 0;
+  let victoria = false;
+  let juegos = partida.juegos;
+  for (item in juegos){
+      puntaje += juegos[item];
+  }
+  if (puntaje >= partida.nivel.meta){
+      victoria = true;
+  }
+  resultado.victoria = victoria;
+  resultado.puntaje = puntaje;
+  return resultado;
+}
+
+console.log(obtenerResultado(partida));
