@@ -14,7 +14,7 @@ function ordenarValores(partida){
 async function calcularEscalera(partida){
     let puntos = 0;
     let servida = 0;
-    if(partida.nivel.tiros == (partida.tirada.intentos - 1)){
+    if(partida.nivel.tiros == partida.tirada.intentos+1){
       servida = 5;
     }
     let valores = ordenarValores(partida);
@@ -30,7 +30,7 @@ async function calcularEscalera(partida){
 async function calcularFull(partida){
     let puntos = 0;
     let servida = 0;
-    if(partida.nivel.tiros == (partida.tirada.intentos - 1)){
+    if(partida.nivel.tiros == partida.tirada.intentos+1){
       servida = 5;
     }
     let valores = ordenarValores(partida);
@@ -48,7 +48,7 @@ async function calcularFull(partida){
 async function calcularPoker(partida){
     let puntos = 0;
     let servida = 0;
-    if(partida.nivel.tiros == (partida.tirada.intentos - 1)){
+    if(partida.nivel.tiros == partida.tirada.intentos+1){
       servida = 5;
     }
     let valores = ordenarValores(partida);
@@ -66,7 +66,7 @@ async function calcularPoker(partida){
 async function calcularGenerala(partida){
     let puntos = 0;
     let servida = 0;
-    if(partida.nivel.tiros == (partida.tirada.intentos - 1)){
+    if(partida.nivel.tiros == partida.tirada.intentos+1){
       servida = 5;
     }
     let valores = partida.tirada.dados;
@@ -82,7 +82,7 @@ async function calcularGenerala(partida){
 async function calcularGdoble(partida){
     let puntos = 0;
     let servida = 0;
-    if(partida.nivel.tiros == (partida.tirada.intentos - 1)){
+    if(partida.nivel.tiros == partida.tirada.intentos+1){
       servida = 5;
     }
     let valores = partida.tirada.dados;

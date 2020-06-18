@@ -11,7 +11,7 @@ async function terminarPartida(id){
         partida.victoria = resultado.victoria;
         partida.puntaje = resultado.puntaje;
         await dataPartidas.updatePartida(partida);
-        let usuario = await dataUsuarios.getUsuario(partida._id);
+        let usuario = await dataUsuarios.getUsuario(partida.usuario);
         usuario.score += partida.puntaje;
         if(partida.victoria){
             usuario.victorias ++;
@@ -39,6 +39,7 @@ function obtenerResultado(partida){
     }
     if (puntaje >= partida.nivel.meta){
         victoria = true;
+        puntaje = puntaje * partida.nivel.level;
     }
     resultado.victoria = victoria;
     resultado.puntaje = puntaje;

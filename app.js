@@ -1,19 +1,19 @@
-let express = require('express');
-let path = require('path');
-let cookieParser = require('cookie-parser');
-let logger = require('morgan');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
 
-let usuariosRouter = require('./routes/usuarios');
-let partidasRouter = require('./routes/partidas');
-let mayoresRouter = require('./routes/mayores');
-let menoresRouter = require('./routes/menores');
-let nuevaPartidaRouter = require('./routes/nuevapartida');
-let tiradasRouter = require('./routes/tiradas');
-let dadosRouter = require('./routes/dados');
-let terminarPartidaRouter = require('./routes/terminarpartida');
-let rankingRouter = require('./routes/ranking');
+var usuariosRouter = require('./routes/usuarios');
+var partidasRouter = require('./routes/partidas');
+var mayoresRouter = require('./routes/mayores');
+var menoresRouter = require('./routes/menores');
+var nuevaPartidaRouter = require('./routes/nuevapartida');
+var tiradasRouter = require('./routes/tiradas');
+var dadosRouter = require('./routes/dados');
+var terminarPartidaRouter = require('./routes/terminarpartida');
+var rankingRouter = require('./routes/ranking');
 
-let app = express();
+var app = express();
 
 app.set('json spaces', 2);
 

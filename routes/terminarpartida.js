@@ -7,7 +7,5 @@ router.put('/:id', async (req, res) => {
     res.send(resultado);
 });
 
-
-
-
+  
 module.exports = router;

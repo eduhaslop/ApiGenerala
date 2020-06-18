@@ -9,7 +9,7 @@ router.post('/facil', async (req, res)=>{
             usuario : req.body.usuario,
             nivel : {level: 1,
                      tiros: 5,
-                     meta: 100},
+                     meta: 150},
             tirada : {
                 dados: {
                     d1 : {valor : null, guardado : false},
@@ -87,7 +87,7 @@ router.post('/dificil', async (req, res)=>{
             usuario : req.body.usuario,
             nivel : {level: 3,
                      tiros: 1,
-                     meta: 300},
+                     meta: 150},
             tirada : {
                 dados: {
                     d1 : {valor : null, guardado : false},

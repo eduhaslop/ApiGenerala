@@ -6,7 +6,6 @@ async function getPartidas(){
         .collection("partidas")
         .find()
         .toArray();
-
     return collection;
 }
 
@@ -15,7 +14,7 @@ async function getPartida(partidaId){
     const doc = await clientmongo.db("generala")
         .collection("partidas")
         .findOne({_id: parseInt(partidaId)});
-    
+    await clientmongo.close();
     return doc;
 }
 
@@ -24,7 +23,7 @@ async function pushPartida(partida){
     const result = await clientmongo.db("generala")
         .collection("partidas")
         .insertOne(partida);
-
+    await clientmongo.close();
     return result;
 }
 
@@ -45,7 +44,7 @@ async function updatePartida(partida){
     const result = await clientmongo.db("generala")
         .collection("partidas")
         .updateOne(query,newvalues);
-    
+    await clientmongo.close();
     return result;
 }
 
@@ -55,7 +54,7 @@ async function deletePartida(partidaId){
     const result = await clientmongo.db("generala")
         .collection("partidas")
         .deleteOne({_id: parseInt(partidaId)});
-    
+    await clientmongo.close(); 
     return result;
 }
 
