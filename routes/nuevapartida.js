@@ -46,7 +46,7 @@ router.post('/medio', async (req, res)=>{
         {
             _id: req.body._id,
             usuario : req.body.usuario,
-            nivel : {level: 2,
+            nivel : {level: 3,
                      tiros: 3,
                      meta: 150},
             tirada : {
@@ -85,7 +85,7 @@ router.post('/dificil', async (req, res)=>{
         {
             _id: req.body._id,
             usuario : req.body.usuario,
-            nivel : {level: 3,
+            nivel : {level: 9,
                      tiros: 1,
                      meta: 150},
             tirada : {

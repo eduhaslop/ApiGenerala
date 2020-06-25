@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
     let ranking = await dataRanking.getRanking();
-    res.send(ranking); 
+    res.send(ranking);
 });
 
 module.exports = router;
