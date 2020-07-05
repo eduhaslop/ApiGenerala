@@ -2,6 +2,29 @@ const express = require('express');
 const dataPartidas = require('../data/partida');
 const router = express.Router();
 
+let dadosDefault = {
+    d1 : {valor : null, guardado : false},
+    d2 : {valor : null, guardado : false},
+    d3 : {valor : null, guardado : false},
+    d4 : {valor : null, guardado : false},
+    d5 : {valor : null, guardado : false}
+  };
+
+  let juegosDefault = {
+    generaladoble : undefined,
+    generala : undefined,
+    poker : undefined,
+    full : undefined,
+    escalera : undefined,
+    seis : undefined,
+    cinco : undefined,
+    cuatro : undefined,
+    tres : undefined,
+    dos : undefined,
+    uno : undefined
+};
+
+
 router.post('/facil', async (req, res)=>{
     let result = await dataPartidas.pushPartida(
         {
@@ -11,28 +34,10 @@ router.post('/facil', async (req, res)=>{
                      tiros: 5,
                      meta: 150},
             tirada : {
-                dados: {
-                    d1 : {valor : null, guardado : false},
-                    d2 : {valor : null, guardado : false},
-                    d3 : {valor : null, guardado : false},
-                    d4 : {valor : null, guardado : false},
-                    d5 : {valor : null, guardado : false}
-                  },
-                  intentos: 5
+                dados: dadosDefault,
+                intentos: 5
             },
-            juegos : {
-                generaladoble : undefined,
-                generala : undefined,
-                poker : undefined,
-                full : undefined,
-                escalera : undefined,
-                seis : undefined,
-                cinco : undefined,
-                cuatro : undefined,
-                tres : undefined,
-                dos : undefined,
-                uno : undefined
-            },
+            juegos: juegosDefault,
             victoria : undefined,
             puntaje : undefined
         }
@@ -50,28 +55,10 @@ router.post('/medio', async (req, res)=>{
                      tiros: 3,
                      meta: 150},
             tirada : {
-                dados: {
-                    d1 : {valor : null, guardado : false},
-                    d2 : {valor : null, guardado : false},
-                    d3 : {valor : null, guardado : false},
-                    d4 : {valor : null, guardado : false},
-                    d5 : {valor : null, guardado : false}
-                  },
+                dados: dadosDefault,
                 intentos: 3
             },
-            juegos : {
-                generaladoble : undefined,
-                generala : undefined,
-                poker : undefined,
-                full : undefined,
-                escalera : undefined,
-                seis : undefined,
-                cinco : undefined,
-                cuatro : undefined,
-                tres : undefined,
-                dos : undefined,
-                uno : undefined
-            },
+            juegos: juegosDefault,
             victoria : undefined,
             puntaje : undefined
         }
@@ -89,28 +76,10 @@ router.post('/dificil', async (req, res)=>{
                      tiros: 1,
                      meta: 150},
             tirada : {
-                dados: {
-                    d1 : {valor : null, guardado : false},
-                    d2 : {valor : null, guardado : false},
-                    d3 : {valor : null, guardado : false},
-                    d4 : {valor : null, guardado : false},
-                    d5 : {valor : null, guardado : false}
-                  },
+                dados: dadosDefault,
                 intentos: 1
             },
-            juegos : {
-                generaladoble : undefined,
-                generala : undefined,
-                poker : undefined,
-                full : undefined,
-                escalera : undefined,
-                seis : undefined,
-                cinco : undefined,
-                cuatro : undefined,
-                tres : undefined,
-                dos : undefined,
-                uno : undefined
-            },
+            juegos: juegosDefault,
             victoria : undefined,
             puntaje : undefined
         }
