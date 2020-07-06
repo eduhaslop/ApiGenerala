@@ -24,7 +24,6 @@ async function pushUsuario(usuario) {
         result = await clientmongo.db("generala")
             .collection("usuarios")
             .insertOne(usuario);
-        await clientmongo.close();
     } else {
         result = 'mandatory fields missing'
     }
