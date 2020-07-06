@@ -1,6 +1,14 @@
 const dataPartida = require('./partida');
 const funciones = require('../functions/f_mayores');
 
+const dadosNuevos = {
+    d1 : {valor : null, guardado : false},
+    d2 : {valor : null, guardado : false},
+    d3 : {valor : null, guardado : false},
+    d4 : {valor : null, guardado : false},
+    d5 : {valor : null, guardado : false}
+};
+
 async function updatePuntosEscalera(id){
     const partida = await dataPartida.getPartida(id);
     if (partida.juegos.escalera !== null){
@@ -11,13 +19,7 @@ async function updatePuntosEscalera(id){
         let tirosPartida = partida.nivel.tiros;
         partida.juegos.escalera = puntos;
         partida.tirada = {
-            dados: {
-                d1 : {valor : null, guardado : false},
-                d2 : {valor : null, guardado : false},
-                d3 : {valor : null, guardado : false},
-                d4 : {valor : null, guardado : false},
-                d5 : {valor : null, guardado : false}
-            },
+            dados: dadosNuevos,
             intentos : tirosPartida 
         }
         dataPartida.updatePartida(partida);
@@ -35,13 +37,7 @@ async function updatePuntosFull(id){
         let tirosPartida = partida.nivel.tiros;
         partida.juegos.full = puntos;
         partida.tirada = {
-            dados: {
-                d1 : {valor : null, guardado : false},
-                d2 : {valor : null, guardado : false},
-                d3 : {valor : null, guardado : false},
-                d4 : {valor : null, guardado : false},
-                d5 : {valor : null, guardado : false}
-            },
+            dados: dadosNuevos,
             intentos : tirosPartida 
         }
         dataPartida.updatePartida(partida);
@@ -59,13 +55,7 @@ async function updatePuntosPoker(id){
         let tirosPartida = partida.nivel.tiros;
         partida.juegos.poker = puntos;
         partida.tirada = {
-            dados: {
-                d1 : {valor : null, guardado : false},
-                d2 : {valor : null, guardado : false},
-                d3 : {valor : null, guardado : false},
-                d4 : {valor : null, guardado : false},
-                d5 : {valor : null, guardado : false}
-            },
+            dados: dadosNuevos,
             intentos : tirosPartida 
         }
         dataPartida.updatePartida(partida);
@@ -83,13 +73,7 @@ async function updatePuntosGenerala(id){
         let tirosPartida = partida.nivel.tiros;
         partida.juegos.generala = puntos;
         partida.tirada = {
-            dados: {
-                d1 : {valor : null, guardado : false},
-                d2 : {valor : null, guardado : false},
-                d3 : {valor : null, guardado : false},
-                d4 : {valor : null, guardado : false},
-                d5 : {valor : null, guardado : false}
-            },
+            dados: dadosNuevos,
             intentos : tirosPartida 
         }
         dataPartida.updatePartida(partida);
@@ -107,13 +91,7 @@ async function updatePuntosGdoble(id){
         let tirosPartida = partida.nivel.tiros;
         partida.juegos.generaladoble = puntos;
         partida.tirada = {
-            dados: {
-                d1 : {valor : null, guardado : false},
-                d2 : {valor : null, guardado : false},
-                d3 : {valor : null, guardado : false},
-                d4 : {valor : null, guardado : false},
-                d5 : {valor : null, guardado : false}
-            },
+            dados: dadosNuevos,
             intentos : tirosPartida 
         }
         dataPartida.updatePartida(partida);
