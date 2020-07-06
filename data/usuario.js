@@ -18,10 +18,16 @@ async function getUsuario(usuarioId) {
 }
 
 async function pushUsuario(usuario) {
-    const clientmongo = await conexion.getConnection();
-    const result = await clientmongo.db("generala")
-        .collection("usuarios")
-        .insertOne(usuario);
+    let result;
+    if(validateUsuario(usuario)){
+        clientmongo = await conexion.getConnection();
+        result = await clientmongo.db("generala")
+            .collection("usuarios")
+            .insertOne(usuario);
+    } else {
+        result = 'mandatory fields missing'
+    }
+    
     return result;
 }
 
@@ -55,6 +61,10 @@ async function deleteUsuario(usuarioId) {
         .collection("usuarios")
         .deleteOne({ _id: parseInt(usuarioId) });
     return result;
+}
+
+function validateUsuario(usuario){
+    return ( usuario.nombre != null && usuario.mail != null && usuario.pass != null )
 }
 
 module.exports = { getUsuarios, getUsuario, updateUsuario, pushUsuario, deleteUsuario };
