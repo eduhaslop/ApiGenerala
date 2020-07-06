@@ -12,6 +12,8 @@ router.get('/:id', async (req, res)=>{
     res.send(partida);
 });
 
+
+/*
 router.post('/', async (req, res)=>{
     let result = await dataPartidas.pushPartida(
         {
@@ -26,7 +28,7 @@ router.post('/', async (req, res)=>{
     );
 
     res.send(result)
-});
+});*/
 
 router.put('/:id', async (req, res)=>{
     let result = await dataPartidas.updatePartida(
