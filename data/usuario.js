@@ -6,7 +6,6 @@ async function getUsuarios() {
         .collection("usuarios")
         .find()
         .toArray();
-    await clientmongo.close();
     return collection;
 }
 
@@ -15,16 +14,28 @@ async function getUsuario(usuarioId) {
     const doc = await clientmongo.db("generala")
         .collection("usuarios")
         .findOne({ _id: parseInt(usuarioId) });
-    await clientmongo.close();
     return doc;
 }
 
 async function pushUsuario(usuario) {
+<<<<<<< Updated upstream
     const clientmongo = await conexion.getConnection();
     const result = await clientmongo.db("generala")
         .collection("usuarios")
         .insertOne(usuario);
     await clientmongo.close();
+=======
+    let result;
+    if(validateUsuario(usuario)){
+        clientmongo = await conexion.getConnection();
+        result = await clientmongo.db("generala")
+            .collection("usuarios")
+            .insertOne(usuario);
+    } else {
+        return 'mandatory fields missing'
+    }
+    
+>>>>>>> Stashed changes
     return result;
 }
 
@@ -48,7 +59,6 @@ async function updateUsuario(usuario) {
     const result = await clientmongo.db("generala")
         .collection("usuarios")
         .updateOne(query, newvalues);
-    await clientmongo.close();
     return result;
 }
 
@@ -58,7 +68,6 @@ async function deleteUsuario(usuarioId) {
     const result = await clientmongo.db("generala")
         .collection("usuarios")
         .deleteOne({ _id: parseInt(usuarioId) });
-    await clientmongo.close();
     return result;
 }
 
