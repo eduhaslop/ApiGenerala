@@ -1,6 +1,14 @@
 const dataPartida = require('./partida');
 const funciones = require('../functions/f_menores');
 
+const dadosNuevos = {
+    d1 : {valor : null, guardado : false},
+    d2 : {valor : null, guardado : false},
+    d3 : {valor : null, guardado : false},
+    d4 : {valor : null, guardado : false},
+    d5 : {valor : null, guardado : false}
+};
+
 async function updatePuntosUno(id){
     const partida = await dataPartida.getPartida(id);
     if (partida.juegos.uno !== null){
@@ -11,13 +19,7 @@ async function updatePuntosUno(id){
         let tirosPartida = partida.nivel.tiros;
         partida.juegos.uno = puntos;
         partida.tirada = {
-            dados: {
-                d1 : {valor : null, guardado : false},
-                d2 : {valor : null, guardado : false},
-                d3 : {valor : null, guardado : false},
-                d4 : {valor : null, guardado : false},
-                d5 : {valor : null, guardado : false}
-            },
+            dados: dadosNuevos,
             intentos : tirosPartida 
         }
         dataPartida.updatePartida(partida);
@@ -35,13 +37,7 @@ async function updatePuntosDos(id){
         let tirosPartida = partida.nivel.tiros;
         partida.juegos.dos = puntos;
         partida.tirada = {
-            dados: {
-                d1 : {valor : null, guardado : false},
-                d2 : {valor : null, guardado : false},
-                d3 : {valor : null, guardado : false},
-                d4 : {valor : null, guardado : false},
-                d5 : {valor : null, guardado : false}
-            },
+            dados: dadosNuevos,
             intentos : tirosPartida 
         }
         dataPartida.updatePartida(partida);
@@ -59,13 +55,7 @@ async function updatePuntosTres(id){
         let tirosPartida = partida.nivel.tiros;
         partida.juegos.tres = puntos;
         partida.tirada = {
-            dados: {
-                d1 : {valor : null, guardado : false},
-                d2 : {valor : null, guardado : false},
-                d3 : {valor : null, guardado : false},
-                d4 : {valor : null, guardado : false},
-                d5 : {valor : null, guardado : false}
-            },
+            dados: dadosNuevos,
             intentos : tirosPartida 
         }
         dataPartida.updatePartida(partida);
@@ -83,13 +73,7 @@ async function updatePuntosCuatro(id){
         let tirosPartida = partida.nivel.tiros;
         partida.juegos.cuatro = puntos;
         partida.tirada = {
-            dados: {
-                d1 : {valor : null, guardado : false},
-                d2 : {valor : null, guardado : false},
-                d3 : {valor : null, guardado : false},
-                d4 : {valor : null, guardado : false},
-                d5 : {valor : null, guardado : false}
-            },
+            dados: dadosNuevos,
             intentos : tirosPartida 
         }
         dataPartida.updatePartida(partida);
@@ -107,13 +91,7 @@ async function updatePuntosCinco(id){
         let tirosPartida = partida.nivel.tiros;
         partida.juegos.cinco = puntos;
         partida.tirada = {
-            dados: {
-                d1 : {valor : null, guardado : false},
-                d2 : {valor : null, guardado : false},
-                d3 : {valor : null, guardado : false},
-                d4 : {valor : null, guardado : false},
-                d5 : {valor : null, guardado : false}
-            },
+            dados: dadosNuevos,
             intentos : tirosPartida 
         }
         dataPartida.updatePartida(partida);
@@ -131,13 +109,7 @@ async function updatePuntosSeis(id){
         let tirosPartida = partida.nivel.tiros;
         partida.juegos.seis = puntos;
         partida.tirada = {
-            dados: {
-                d1 : {valor : null, guardado : false},
-                d2 : {valor : null, guardado : false},
-                d3 : {valor : null, guardado : false},
-                d4 : {valor : null, guardado : false},
-                d5 : {valor : null, guardado : false}
-            },
+            dados: dadosNuevos,
             intentos : tirosPartida 
         }
         dataPartida.updatePartida(partida);
