@@ -2,7 +2,7 @@ const express = require('express');
 const dataPartidas = require('../data/partida');
 const router = express.Router();
 
-let dadosDefault = {
+const dadosDefault = {
     d1 : {valor : null, guardado : false},
     d2 : {valor : null, guardado : false},
     d3 : {valor : null, guardado : false},
