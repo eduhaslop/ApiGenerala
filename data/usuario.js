@@ -18,24 +18,10 @@ async function getUsuario(usuarioId) {
 }
 
 async function pushUsuario(usuario) {
-<<<<<<< Updated upstream
     const clientmongo = await conexion.getConnection();
     const result = await clientmongo.db("generala")
         .collection("usuarios")
         .insertOne(usuario);
-    await clientmongo.close();
-=======
-    let result;
-    if(validateUsuario(usuario)){
-        clientmongo = await conexion.getConnection();
-        result = await clientmongo.db("generala")
-            .collection("usuarios")
-            .insertOne(usuario);
-    } else {
-        return 'mandatory fields missing'
-    }
-    
->>>>>>> Stashed changes
     return result;
 }
 
