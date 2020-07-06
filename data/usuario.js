@@ -28,7 +28,7 @@ async function pushUsuario(usuario) {
             .insertOne(usuario);
         await clientmongo.close();
     } else {
-        return 'mandatory fields missing'
+        result = 'mandatory fields missing'
     }
     
     return result;
@@ -69,7 +69,7 @@ async function deleteUsuario(usuarioId) {
 }
 
 function validateUsuario(usuario){
-    usuario.nombre != null && usuario.mail != null && usuario.pass != null
+    return ( usuario.nombre != null && usuario.mail != null && usuario.pass != null )
 }
 
 module.exports = { getUsuarios, getUsuario, updateUsuario, pushUsuario, deleteUsuario };
