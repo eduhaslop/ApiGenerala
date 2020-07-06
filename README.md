@@ -12,8 +12,21 @@ Integrantes: Eduardo Haslop, Bautista Querejeta, Franco De Angelis, Facundo Tzoy
 ### Usuarios:
 ## TODO importante, esto se va a quitar y agregar un endpoint publico Login y otro Register, para validar los datos ingresados desde el front.
 
-`Path: /login`
+GET `Path: /login`
 - Se enviaran los datos de email y contrasenia en el header del request, se validara en el back y se devolvera si el request fue exitoso.
+
+PUT `Path: /register`
+- Se enviaran los datos: 
+
+```
+{
+  nombre: pepin,
+  mail: pepin1@gmail.com,
+  pass: pepin123
+}
+```
+
+Si el put es exitoso se auto-logeara el usuario y podra comenzar una partida.
 
 
 GET `Path: /usuarios`
@@ -80,11 +93,31 @@ Devuelve un array de objetos ranking:
 	promedio: 1000
 }
 ```
+## Cruds Partidas
+GET `Path: /partidas`
+- Devuelve un listado con todas las partidas
 
+GET `Path: /partidas:id`
+- Devuelve la partida dependiendo del id enviado
+
+POST `Path: /partidas`
+- Ingresa una partida 
+```
+Recibe
+{
+  id: 1,
+  usuario: 'pepin',
+  nivel: 'dificil',
+  tirada: 1, // En que tirada termino el juego
+  juegos: 3,
+  victoria: true,
+  puntaje: 1500
+}
+```
 
 ## Endpoints del juego
 
-`Route: /nuevaPartida`
+`Path: /nuevaPartida`
 - Este endpoint se encargara de devolvernos una partida con cierta dificultad para jugar, para elegir la dificultad se elige el PATH `/dificil`,  `/medio` y  `/facil` 
 (TODO en un futuro planeamos unificar este path en uno solo y recibir la dificultad por query param, asi unificando la logica del back)
 
