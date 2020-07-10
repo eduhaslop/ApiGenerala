@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors');
 
 var usuariosRouter = require('./routes/usuarios');
 var partidasRouter = require('./routes/partidas');
@@ -14,7 +15,7 @@ var terminarPartidaRouter = require('./routes/terminarpartida');
 var rankingRouter = require('./routes/ranking');
 
 var app = express();
-
+app.use(cors());
 app.set('json spaces', 2);
 
 app.use(logger('dev'));
