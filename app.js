@@ -13,8 +13,8 @@ var tiradasRouter = require('./routes/tiradas');
 var dadosRouter = require('./routes/dados');
 var terminarPartidaRouter = require('./routes/terminarpartida');
 var rankingRouter = require('./routes/ranking');
-var loginRouter = require('/routes/login');
-var registerRouter = require('/routes/register');
+var loginRouter = require('./routes/login');
+var registerRouter = require('./routes/register');
 
 
 var app = express();
