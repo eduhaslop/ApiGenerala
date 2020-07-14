@@ -6,7 +6,7 @@ router.get('/', async (req, res)=>{
     let usuario = await dataUsuarios.getUsuarioWithMail(req.body.mail);
 
     if (!!usuario && usuario.pass === req.body.pass) {
-        res.send(usuario);
+        res.send(usuario.id);
     } else {
         req.status(401).send('email o contrasenia incorrectos');
     }

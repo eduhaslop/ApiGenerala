@@ -21,8 +21,10 @@ router.post('/', async (req, res)=>{
                 promedio: 0
             }
         );
+
+        let usuario = await dataUsuarios.getUsuarioWithMail(req.body.mail);
     
-        res.send(result)
+        res.send(usuario.id)
     }
 });
 
