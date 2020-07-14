@@ -9,6 +9,14 @@ async function getUsuarios() {
     return collection;
 }
 
+async function getUsuarioWithMail(mail) {
+    const clientmongo = await conexion.getConnection();
+    const doc = await clientmongo.db("generala")
+    .collection("usuarios")
+    .findOne({ mail: mail });
+    return doc;
+}
+
 async function getUsuario(usuarioId) {
     const clientmongo = await conexion.getConnection();
     const doc = await clientmongo.db("generala")
@@ -83,4 +91,4 @@ function validateUsuario(usuario){
     return ( usuario.nombre != null && usuario.mail != null && usuario.pass != null )
 }
 
-module.exports = { getUsuarios, getUsuario, updateUsuario, pushUsuario, deleteUsuario, updateUsuarioScore };
+module.exports = { getUsuarios, getUsuario, updateUsuario, pushUsuario, deleteUsuario, getUsuarioWithMail, updateUsuarioScore};

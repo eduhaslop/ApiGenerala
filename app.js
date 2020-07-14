@@ -13,6 +13,9 @@ var tiradasRouter = require('./routes/tiradas');
 var dadosRouter = require('./routes/dados');
 var terminarPartidaRouter = require('./routes/terminarpartida');
 var rankingRouter = require('./routes/ranking');
+var loginRouter = require('./routes/login');
+var registerRouter = require('./routes/register');
+
 
 var app = express();
 app.use(cors());
@@ -34,6 +37,8 @@ app.use('/menores', menoresRouter);
 app.use('/dados', dadosRouter);
 app.use('/terminar', terminarPartidaRouter);
 app.use('/ranking', rankingRouter);
+app.use('/login', loginRouter);
+app.use('/register', registerRouter);
 
 
 module.exports = app;
