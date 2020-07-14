@@ -60,7 +60,7 @@ async function updateUsuarioScore(usuario, score) {
     const newvalues = {
         $set:
         {
-            score: score
+            score: usuario.score + score
         }        
     };
 
