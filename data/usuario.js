@@ -62,6 +62,22 @@ async function updateUsuario(usuario) {
     return result;
 }
 
+async function updateUsuarioScore(usuario, score) {
+    const clientmongo = await conexion.getConnection();
+    const query = { _id: parseInt(usuario._id) };
+    const newvalues = {
+        $set:
+        {
+            score: usuario.score + score
+        }        
+    };
+
+    const result = await clientmongo.db("generala")
+        .collection("usuarios")
+        .updateOne(query, newvalues);
+    return result;
+}
+
 async function deleteUsuario(usuarioId) {
     const clientmongo = await conexion.getConnection();
 
@@ -75,4 +91,4 @@ function validateUsuario(usuario){
     return ( usuario.nombre != null && usuario.mail != null && usuario.pass != null )
 }
 
-module.exports = { getUsuarios, getUsuario, updateUsuario, pushUsuario, deleteUsuario, getUsuarioWithMail };
+module.exports = { getUsuarios, getUsuario, updateUsuario, pushUsuario, deleteUsuario, getUsuarioWithMail, updateUsuarioScore};
