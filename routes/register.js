@@ -7,7 +7,8 @@ router.post('/', async (req, res)=>{
     let previousUser = await dataUsuarios.getUsuarioWithMail(req.body.mail);
    
     if (!!previousUser) {
-        res.status(409).send('El usuario ya esta registrado');
+        res.statusCode = 409;
+        res.send('El usuario ya esta registrado');
     } else {
         let result = await dataUsuarios.pushUsuario(
             {
@@ -21,6 +22,8 @@ router.post('/', async (req, res)=>{
                 promedio: 0
             }
         );
+
+        // TODO: hacer get usuario en base a si paso el result
 
         let usuario = await dataUsuarios.getUsuarioWithMail(req.body.mail);
     

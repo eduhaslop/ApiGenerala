@@ -9,7 +9,8 @@ router.get('/', async (req, res)=>{
         const user_id = usuario.id;
         res.send(user_id);
     } else {
-        req.status(401).send('email o contrasenia incorrectos');
+        res.statusCode = 401;
+        res.send('email o contrasenia incorrectos');
     }
 });
 
