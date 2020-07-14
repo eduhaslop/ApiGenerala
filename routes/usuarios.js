@@ -51,12 +51,8 @@ router.put('/:id', async (req, res)=>{
 });
 
 router.put('/updateScore/:id', async (req, res)=>{
-    let result = await dataUsuarios.updateUsuarioScore(
-        {
-            _id: req.params.id,
-            score: req.body.score
-        }
-    );
+    let usuario = await dataUsuarios.getUsuario(req.params.id);
+    let result = await dataUsuarios.updateUsuarioScore(usuario, req.body.score );
 
     res.send(result)
 });
