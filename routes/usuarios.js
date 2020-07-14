@@ -50,6 +50,17 @@ router.put('/:id', async (req, res)=>{
     res.send(result)
 });
 
+router.put('/updateScore/:id', async (req, res)=>{
+    let result = await dataUsuarios.updateUsuarioScore(
+        {
+            _id: req.params.id,
+            score: req.body.score
+        }
+    );
+
+    res.send(result)
+});
+
 router.delete('/:id', async (req, res)=>{
     let result = await dataUsuarios.deleteUsuario(req.params.id);
     res.send(result);

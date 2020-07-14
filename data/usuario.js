@@ -54,6 +54,22 @@ async function updateUsuario(usuario) {
     return result;
 }
 
+async function updateUsuarioScore(usuario) {
+    const clientmongo = await conexion.getConnection();
+    const query = { _id: parseInt(usuario._id) };
+    const newvalues = {
+        $set:
+        {
+            score: usuario.score
+        }        
+    };
+
+    const result = await clientmongo.db("generala")
+        .collection("usuarios")
+        .updateOne(query, newvalues);
+    return result;
+}
+
 async function deleteUsuario(usuarioId) {
     const clientmongo = await conexion.getConnection();
 
