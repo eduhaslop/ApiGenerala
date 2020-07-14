@@ -23,12 +23,15 @@ router.post('/', async (req, res)=>{
             }
         );
 
-        // TODO: hacer get usuario en base a si paso el result
+        if(!!result){
+            let usuario = await dataUsuarios.getUsuarioWithMail(req.body.mail);
+            const user = {"nombre": usuario.nombre, "id": usuario._id}
+            res.send({"usuario": user});
 
-        let usuario = await dataUsuarios.getUsuarioWithMail(req.body.mail);
-    
-        const user_id = usuario.id;
-        res.send(user_id)
+        } else {
+            res.statusCode = 504;
+            res.send("Hubo un error inesperado al registrar");
+        }
     }
 });
 
