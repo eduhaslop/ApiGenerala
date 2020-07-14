@@ -24,7 +24,8 @@ router.post('/', async (req, res)=>{
 
         let usuario = await dataUsuarios.getUsuarioWithMail(req.body.mail);
     
-        res.send(usuario.id)
+        const user_id = usuario.id;
+        res.send(user_id)
     }
 });
 
