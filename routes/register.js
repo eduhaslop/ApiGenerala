@@ -9,7 +9,7 @@ router.post('/', async (req, res)=>{
     if (!!previousUser) {
         res.statusCode = 409;
         res.send('El usuario ya esta registrado');
-    } else {
+    } else if (!!req.body.pass && !!req.body.mail && !!req.body.nombre){
         let result = await dataUsuarios.pushUsuario(
             {
                 nombre: req.body.nombre,
@@ -32,6 +32,9 @@ router.post('/', async (req, res)=>{
             res.statusCode = 504;
             res.send("Hubo un error inesperado al registrar");
         }
+    } else {
+        res.statusCode = 504;
+            res.send("Hubo un error inesperado al registrar");
     }
 });
 
