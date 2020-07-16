@@ -9,6 +9,18 @@ async function getUsuarios() {
     return collection;
 }
 
+async function getLastUsuarioId() {
+    const clientmongo = await conexion.getConnection();
+    const usuario = await clientmongo.db("generala")
+        .collection("usuarios")
+        .find()
+        .sort({_id:-1})
+        .limit(1)
+        .toArray();
+    return usuario[0]._id;
+}
+
+
 async function getUsuarioWithMail(mail) {
     const clientmongo = await conexion.getConnection();
     const doc = await clientmongo.db("generala")
@@ -26,6 +38,8 @@ async function getUsuario(usuarioId) {
 }
 
 async function pushUsuario(usuario) {
+    const id = await getLastUsuarioId();
+    usuario._id = id + 1 ;
     let result;
     if(validateUsuario(usuario)){
         clientmongo = await conexion.getConnection();
